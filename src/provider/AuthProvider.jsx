@@ -25,7 +25,7 @@ const AuthProvider = ({ children }) => {
     }
     const provider = new GoogleAuthProvider();
     const createUserWithGoogle = () => {
-        signInWithPopup(auth, provider)
+        return signInWithPopup(auth, provider)
     }
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {

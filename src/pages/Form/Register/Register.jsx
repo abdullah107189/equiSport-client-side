@@ -1,9 +1,12 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../provider/AuthProvider";
 import Swal from "sweetalert2";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
+    const [open, setOpen] = useState(true)
+    const [loading, setLoading] = useState(false)
     const { createUserWithPassAndEmail, updateUserProfile, setUser } = useContext(AuthContext)
     const navigate = useNavigate()
     const handleSubmit = (e) => {
@@ -35,6 +38,7 @@ const Register = () => {
                 icon: "warning"
             });
         }
+        setLoading(true)
         createUserWithPassAndEmail(email, password)
             .then(res => {
                 if (res.user) {
@@ -47,19 +51,24 @@ const Register = () => {
                             });
                             setUser(prev => { return { ...prev, photoURL: photoUrl, displayName: name } })
                             navigate('/')
+                            setLoading(false)
                         })
-                        .catch(error => Swal.fire({
-                            text: error.message,
-                            icon: "warning"
-                        }))
+                        .catch(error => {
+                            Swal.fire({
+                                text: error.message,
+                                icon: "warning"
+                            })
+                            setLoading(false)
+                        })
                 }
             })
-            .catch(error =>
+            .catch(error => {
                 Swal.fire({
                     text: error.message,
                     icon: "warning"
                 })
-            )
+                setLoading(false)
+            })
     };
 
     return (
@@ -99,30 +108,22 @@ const Register = () => {
                     </div>
 
                     <div className="mb-6">
-                        <label htmlFor="password" className="block text-sm font-medium ">Password</label>
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            className="mt-2 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
-                            required
-                        />
+                        <label htmlFor="password" className="block text-sm font-medium">Password</label>
+                        <div className="relative w-full">
+                            <input name="password"
+                                id="password"
+                                type={open ? 'password' : 'text'}
+                                placeholder="password"
+                                className="mt-2 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                                required />
+                            <span className="absolute top-2 right-1 cursor-pointer p-2" onClick={() => setOpen(!open)}>{open ? <FaEye className="w-10" /> : <FaEyeSlash className="w-10" />}</span>
+                        </div>
                     </div>
 
-                    <button
-                        type="submit"
-                        className="w-full bg-indigo-500 text-white py-2 rounded-md focus:outline-none hover:bg-indigo-600 transition duration-200"
-                    >
-                        Register
-                    </button>
+                    <button type="submit" className="w-full bg-indigo-500 text-white py-2 rounded-md focus:outline-none hover:bg-indigo-600 transition duration-200">{loading ? <span className="loading loading-dots loading-lg"></span> : 'Register'}</button>
                 </form>
-                <div className="text-sm">Have an account <Link to={'/login'}><button className="btn-link"> Login</button></Link></div>
+                <div className="text-sm mt-2">Have an account <Link to={'/login'}><button className="btn-link"> Login</button></Link></div>
 
-                <div className="mt-4 text-center">
-                    <button className="w-full bg-accent hover:bg-accent/80 text-white py-2 rounded-md focus:outline-none transition duration-200">
-                        Sign up with Google
-                    </button>
-                </div>
             </div>
         </div>
     );
