@@ -4,9 +4,13 @@ import Footer from "../components/Footer/Footer";
 
 const MainLayout = () => {
     return (
-        <div className="mxw text-white">
-            <Navbar></Navbar>
-            <Outlet></Outlet>
+        <div className="text-white">
+            <div className="mxw">
+                <Navbar></Navbar>
+            </div>
+            <div className="mxw">
+                <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </div>
     );

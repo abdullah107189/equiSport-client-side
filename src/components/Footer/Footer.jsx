@@ -1,13 +1,12 @@
 import logo from '../../assets/EquiSports.webp'
 const Footer = () => {
     return (
-        <div>
-            <div className="footer bg-neutral  p-10">
+        <div className='bg-neutral'>
+            <div className="footer md:py-10 py-5 mxw">
                 <aside>
                     <img className='w-[150px] rounded-lg object-contain' src={logo} alt="" />
-                    <p className="text-3xl font-bold">
-                        EquiSports
-                    </p>
+                    <p className="text-3xl font-bold italic"><span className="text-accent">E</span>qui<span className="text-accent">S</span>ports</p>
+
                 </aside>
                 <nav>
                     <h6 className="footer-title">Services</h6>
