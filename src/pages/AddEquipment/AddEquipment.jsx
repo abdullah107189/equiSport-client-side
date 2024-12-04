@@ -1,15 +1,18 @@
 
-import { useState } from "react";
+import { useContext, useState } from "react";
 import './addEquipment.css'
 import { FaArrowLeft, FaRegStar, FaStar } from "react-icons/fa";
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 import Rating from "react-rating";
+import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
 const AddEquipment = () => {
     const [rating, setRating] = useState(1)
     const [startDate, setStartDate] = useState(new Date());
-   
+    const formattedDate = startDate.toLocaleDateString('CA-en')
+    const { user } = useContext(AuthContext)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -20,11 +23,29 @@ const AddEquipment = () => {
             price: e.target.price.value,
             rating: rating,
             customization: e.target.customization.value,
-            processingTime: startDate,
+            processingTime: formattedDate,
             stockStatus: e.target.stockStatus.value,
             description: e.target.description.value,
+            authorUser:user?.email, 
         };
-        console.log(formData)
+        fetch('http://localhost:4545/add-equipments', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Added Data',
+                        text: 'Your data added successfully done !',
+                        icon: 'success'
+                    })
+                }
+            })
+            .catch(error => console.log(error))
         e.target.reset();
     };
 
@@ -99,7 +120,13 @@ const AddEquipment = () => {
                     <div className="mb-4">
                         <label htmlFor="processingTime" className="block text-sm font-medium">Processing Time (days)</label>
                         <div className="flex items-center gap-10 relative">
-                            <DatePicker id="processingTime" className="mt-2 w-full p-2 border rounded-md shadow-sm" selected={startDate} onChange={(date) => setStartDate(date)} />
+                            <DatePicker
+                                id="processingTime"
+                                className="mt-2 w-full p-2 border rounded-md shadow-sm"
+                                selected={startDate}
+                                onChange={(date) => setStartDate(date)}
+                                dateFormat="dd/MM//yyyy"
+                            />
                             <p className=""><span className="moving-arrow lg:right-[47%] right-[35%]"><FaArrowLeft /></span>select this field</p>
                         </div>
                     </div>
@@ -110,6 +137,30 @@ const AddEquipment = () => {
                             type="number"
                             id="stockStatus"
                             name="stockStatus"
+                            className="mt-2 block w-full p-2 border rounded-md shadow-sm"
+                            required
+                        />
+                    </div>
+                    <div className="mb-4">
+                        <label htmlFor="authorEmail" className="block text-sm font-medium">Author Email</label>
+                        <input
+                            type="email"
+                            id="authorEmail"
+                            defaultValue={user?.email}
+                            readOnly
+                            name="authorEmail"
+                            className="mt-2 block w-full p-2 border rounded-md shadow-sm"
+                            required
+                        />
+                    </div>
+                    <div className="mb-4">
+                        <label htmlFor="authorName" className="block text-sm font-medium">Author Name</label>
+                        <input
+                            type="text"
+                            id="authorName"
+                            defaultValue={user?.displayName}
+                            readOnly
+                            name="authorName"
                             className="mt-2 block w-full p-2 border rounded-md shadow-sm"
                             required
                         />

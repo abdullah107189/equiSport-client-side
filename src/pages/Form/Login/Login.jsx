@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../provider/AuthProvider";
 import Swal from "sweetalert2";
 import googleLogo from '../../../assets/google.png'
@@ -11,6 +11,9 @@ const Login = () => {
     const [gloading, setGloading] = useState(false)
     const { createdUserLoginWithPassAndWith, createUserWithGoogle, setUser } = useContext(AuthContext)
     const navigate = useNavigate()
+    let location = useLocation();
+    const from = location.state?.pathname || "/";
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -32,7 +35,7 @@ const Login = () => {
                         text: "Well Come our site!",
                         icon: "success"
                     });
-                    navigate('/')
+                    navigate(from)
                     setLoading(false)
                 }
             })
@@ -56,7 +59,7 @@ const Login = () => {
                         text: "well come our site!",
                         icon: "success"
                     });
-                    navigate('/')
+                    navigate(from)
                     setGloading(false)
                     setUser(prev => { return { ...prev, photo, name } })
                 }

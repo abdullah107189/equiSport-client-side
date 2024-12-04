@@ -21,7 +21,7 @@ const Navbar = () => {
         })
     }
     return (
-        <div className="navbar bg-base-100 py-4 px-0">
+        <div className="navbar bg-base-100 py-2 px-0 ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -60,7 +60,7 @@ const Navbar = () => {
                     src={user ? user?.photoURL : userLogo} />
                 {
                     user ?
-                        <button onClick={handleLogOut} className="btn btn-accent">Log Out</button>
+                        <button onClick={handleLogOut} className="btn">Log Out</button>
                         :
                         <div className="flex gap-3">
                             <NavLink to="/login" className={({ isActive }) => isActive ? "btn-accent btn" : "btn"}>Login</NavLink>

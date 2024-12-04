@@ -9,6 +9,8 @@ import AddEquipment from "../pages/AddEquipment/AddEquipment";
 import MyEquipment from "../pages/MyEquipment/MyEquipment";
 import Login from "../pages/Form/Login/Login";
 import Register from "../pages/Form/Register/Register";
+import PrivetRoute from "../route/PrivetRoute";
+import DetailsPage from "../pages/DetailsPage/DetailsPage";
 const Router = createBrowserRouter([
     {
         path: "/",
@@ -24,11 +26,16 @@ const Router = createBrowserRouter([
             },
             {
                 path: 'addEquipment',
-                element: <AddEquipment></AddEquipment>
+                element: <PrivetRoute><AddEquipment></AddEquipment></PrivetRoute>
             },
             {
                 path: 'myEquipment',
-                element: <MyEquipment></MyEquipment>
+                element: <PrivetRoute><MyEquipment></MyEquipment></PrivetRoute>
+            },
+            {
+                path: '/details-page/:id',
+                element: <PrivetRoute> <DetailsPage></DetailsPage></PrivetRoute>,
+                loader: ({ params }) => fetch(`http://localhost:4545/all-equipments/${params.id}`)
             },
             {
                 path: '/login',
@@ -41,8 +48,8 @@ const Router = createBrowserRouter([
         ]
     },
     {
-        path:'*',
-        element:<PageNotFound></PageNotFound>
+        path: '*',
+        element: <PageNotFound></PageNotFound>
     }
 ]);
 export default Router;
