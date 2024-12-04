@@ -1,0 +1,29 @@
+.custom-pagination {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  top: -40px;
+  position: relative;
+}
+.swiper-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 10px; /* Adjust this for vertical placement */
+    position: absolute;
+    width: 100%;
+  }
+  
+.swiper-pagination-bullet-active {
+  background-color: #00cdb7;
+}
+.minH{
+    height: calc(100vh - 80px);
+}

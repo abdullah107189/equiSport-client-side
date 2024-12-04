@@ -1,8 +1,11 @@
+import HomeProducts from "../../components/HomeProducts/HomeProducts";
+import Slider from "../../components/Slider/Slider";
 
 const Home = () => {
     return (
         <div>
-            <h1>home</h1>
+            <Slider></Slider>
+            <HomeProducts></HomeProducts>
         </div>
     );
 };

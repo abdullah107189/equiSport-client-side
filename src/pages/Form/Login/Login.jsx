@@ -15,6 +15,14 @@ const Login = () => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
+
+        if (password.length <= 5) {
+            return Swal.fire({
+                title: "Check password",
+                text: "at least 6 characters",
+                icon: "warning"
+            });
+        }
         setLoading(true)
         createdUserLoginWithPassAndWith(email, password)
             .then(res => {
