@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './slider.css'
-import { Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 
 const Slider = () => {
     const categories = [
@@ -38,6 +38,10 @@ const Slider = () => {
                     slidesPerView={1}
                     spaceBetween={30}
                     loop={true}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                      }}
                     pagination={{
                         clickable: true,
                         renderBullet: (index, className) => {
@@ -45,11 +49,11 @@ const Slider = () => {
                         },
                     }}
                     navigation={true}
-                    modules={[Pagination, Navigation]}
+                    modules={[Pagination, Navigation, Autoplay]}
                     className="mySwiper"
                 >
                     <SwiperSlide>
-                        <div className='grid grid-cols-2  md:gap-10 items-center justify-between minH'>
+                        <div className='grid grid-cols-2 w-4/5 mx-auto  md:gap-10 items-center justify-between minH'>
                             <div className="flex flex-col items-center justify-center bg-cover bg-center ">
                                 <h1 className="text-4xl sm:text-6xl font-bold  text-center drop-shadow-md">
                                     Equip Your Game with the Best Gear
@@ -67,7 +71,7 @@ const Slider = () => {
                                 </div>
                             </div>
                             <div className='mx-auto'>
-                                <img className='w-[500px] rounded-xl' src="https://www1.lovethatdesign.com/wp-content/uploads/2016/12/20161208-Go-Sport-BRC-01.jpg" alt="" />
+                                <img className='w-4/5 mx-auto rounded-xl' src="https://www1.lovethatdesign.com/wp-content/uploads/2016/12/20161208-Go-Sport-BRC-01.jpg" alt="" />
                             </div>
                         </div>
                     </SwiperSlide>

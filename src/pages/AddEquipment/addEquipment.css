@@ -1,0 +1,16 @@
+.moving-arrow {
+    position: absolute;
+    animation: move-left-right 2s infinite alternate;
+    font-size: 24px; /* Adjust the size of the arrow */
+    color: #000; /* Adjust the color of the arrow */
+  }
+  
+  @keyframes move-left-right {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(10px); /* Adjust the distance of the movement */
+    }
+  }
+  
