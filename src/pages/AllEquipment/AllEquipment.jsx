@@ -7,7 +7,7 @@ const AllEquipment = () => {
         fetch('http://localhost:4545/all-equipments')
             .then(res => res.json())
             .then(data => setEquipments(data))
-    },[])
+    }, [])
     return (
         <div className="">
             <div className="overflow-x-auto minH">
@@ -29,7 +29,15 @@ const AllEquipment = () => {
                     </thead>
                     <tbody>
                         {
-                            equipments.length === 0 ? <span className="loading loading-dots w-48"></span> :
+                            equipments.length === 0 ?
+                                <tr>
+                                    <td colSpan={7} className="w-full">
+                                        <div className="w-full flex items-center justify-center">
+                                            <span className="loading loading-dots w-48"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                :
                                 equipments.map((equipment, idx) => <tr className="hover:bg-gray-100" key={equipment._id}>
                                     <th>
                                         {idx + 1}
