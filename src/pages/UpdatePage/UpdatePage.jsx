@@ -1,6 +1,6 @@
-
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-import './addEquipment.css'
+import './updatePage.css'
 import { FaArrowLeft, FaRegStar, FaStar } from "react-icons/fa";
 import DatePicker from "react-datepicker";
 
@@ -8,11 +8,16 @@ import "react-datepicker/dist/react-datepicker.css";
 import Rating from "react-rating";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
-const AddEquipment = () => {
-    const [rating, setRating] = useState(1)
+const UpdatePage = () => {
+    const loadData = useLoaderData()
+    const {
+        _id, image, itemName, category, price, rating, customization, processingTime, stockStatus, description, authorUser
+    } = loadData;
+    const [ratings, setRatings] = useState(rating)
     const [startDate, setStartDate] = useState(new Date());
     const formattedDate = startDate.toLocaleDateString('CA-en')
     const { user } = useContext(AuthContext)
+    const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -21,15 +26,14 @@ const AddEquipment = () => {
             itemName: e.target.itemName.value,
             category: e.target.category.value,
             price: e.target.price.value,
-            rating: rating,
+            rating: ratings,
             customization: e.target.customization.value,
             processingTime: formattedDate,
             stockStatus: e.target.stockStatus.value,
             description: e.target.description.value,
-            authorUser:user?.email, 
         };
-        fetch('http://localhost:4545/add-equipments', {
-            method: 'POST',
+        fetch(`http://localhost:4545/update-equipments/${_id}`, {
+            method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
             },
@@ -37,18 +41,20 @@ const AddEquipment = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.insertedId) {
+                if (data.modifiedCount > 0) {
                     Swal.fire({
-                        title: 'Added Data',
-                        text: 'Your data added successfully done !',
+                        title: `Updated ${itemName}`,
+                        text: `${authorUser}, please check your update..`,
                         icon: 'success'
                     })
+                    navigate(-1)
                 }
+
             })
             .catch(error => console.log(error))
         e.target.reset();
     };
-
+    console.log(loadData);
     return (
         <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
             <h2 className="text-3xl font-semibold mb-4 text-center">Add Product</h2>
@@ -61,6 +67,7 @@ const AddEquipment = () => {
                             id="image"
                             name="image"
                             className="mt-2 block w-full p-2 border rounded-md shadow-sm"
+                            defaultValue={image}
                             required
                         />
                     </div>
@@ -72,6 +79,7 @@ const AddEquipment = () => {
                             id="itemName"
                             name="itemName"
                             className="mt-2 block w-full p-2 border rounded-md shadow-sm"
+                            defaultValue={itemName}
                             required
                         />
                     </div>
@@ -82,6 +90,7 @@ const AddEquipment = () => {
                             id="category"
                             name="category"
                             className="mt-2 block w-full p-2 border rounded-md shadow-sm"
+                            defaultValue={category}
                             required
                         />
                     </div>
@@ -93,6 +102,7 @@ const AddEquipment = () => {
                             id="price"
                             name="price"
                             className="mt-2 block w-full p-2 border rounded-md shadow-sm"
+                            defaultValue={price}
                             required
                         />
                     </div>
@@ -100,8 +110,8 @@ const AddEquipment = () => {
                     <div className="mb-4">
                         <label htmlFor="rating" className="block text-sm font-medium">Rating</label>
                         <Rating
-                            initialRating={1}
-                            onChange={(rate) => setRating(rate)}
+                            initialRating={rating}
+                            onChange={(rate) => setRatings(rate)}
                             emptySymbol={<FaRegStar className="w-10 h-10" />}
                             fullSymbol={<FaStar className="w-10 h-10" />}
                         />
@@ -114,6 +124,7 @@ const AddEquipment = () => {
                             id="customization"
                             name="customization"
                             className="mt-2 block w-full p-2 border rounded-md shadow-sm"
+                            defaultValue={customization}
                         />
                     </div>
 
@@ -124,6 +135,7 @@ const AddEquipment = () => {
                                 id="processingTime"
                                 className="mt-2 w-full p-2 border rounded-md shadow-sm"
                                 selected={startDate}
+                                defaultValue={processingTime}
                                 onChange={(date) => setStartDate(date)}
                                 dateFormat="dd/MM//yyyy"
                             />
@@ -138,6 +150,7 @@ const AddEquipment = () => {
                             id="stockStatus"
                             name="stockStatus"
                             className="mt-2 block w-full p-2 border rounded-md shadow-sm"
+                            defaultValue={stockStatus}
                             required
                         />
                     </div>
@@ -173,6 +186,7 @@ const AddEquipment = () => {
                         id="description"
                         name="description"
                         className="mt-2 block w-full p-2 border rounded-md shadow-sm"
+                        defaultValue={description}
                         required
                     ></textarea>
                 </div>
@@ -182,7 +196,7 @@ const AddEquipment = () => {
                         type="submit"
                         className="w-full btn py-2 rounded-md hover:btn-accent"
                     >
-                        Add Product
+                        Update Equipment
                     </button>
                 </div>
             </form>
@@ -190,4 +204,4 @@ const AddEquipment = () => {
     );
 };
 
-export default AddEquipment;
+export default UpdatePage;

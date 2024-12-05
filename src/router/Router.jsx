@@ -11,6 +11,7 @@ import Login from "../pages/Form/Login/Login";
 import Register from "../pages/Form/Register/Register";
 import PrivetRoute from "../route/PrivetRoute";
 import DetailsPage from "../pages/DetailsPage/DetailsPage";
+import UpdatePage from "../pages/UpdatePage/UpdatePage";
 const Router = createBrowserRouter([
     {
         path: "/",
@@ -33,8 +34,13 @@ const Router = createBrowserRouter([
                 element: <PrivetRoute><MyEquipment></MyEquipment></PrivetRoute>
             },
             {
-                path: '/details-page/:id',
+                path: 'details-page/:id',
                 element: <PrivetRoute> <DetailsPage></DetailsPage></PrivetRoute>,
+                loader: ({ params }) => fetch(`http://localhost:4545/all-equipments/${params.id}`)
+            },
+            {
+                path: 'update-page/:id',
+                element: <PrivetRoute> <UpdatePage></UpdatePage></PrivetRoute>,
                 loader: ({ params }) => fetch(`http://localhost:4545/all-equipments/${params.id}`)
             },
             {

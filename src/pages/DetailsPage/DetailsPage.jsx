@@ -10,7 +10,7 @@ const DetailsPage = () => {
     return (
         <div className=" py-10 flex items-center justify-center relative">
             <button onClick={() => navigate(-1)} className="absolute top-0 left-0 btn">Back</button>
-            <div className=" mx-auto p-6 bg-white shadow-lg rounded-lg border border-red-400 mt-5">
+            <div className=" mx-auto p-6 bg-white shadow-lg rounded-sm border mt-5">
                 <div className="flex flex-col md:flex-row md:gap-10">
                     {/* Equipment Image */}
                     <div className="md:w-1/2 flex items-center">

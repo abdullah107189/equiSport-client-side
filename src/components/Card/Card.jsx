@@ -1,9 +1,7 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const Card = ({ data }) => {
-    const {
-        image, itemName, category, price, rating, customization, processingTime, stockStatus, description, authorUser
-    } = data;
+    const { image, itemName, category, price, rating, stockStatus, description, _id } = data;
 
     return (
         <div className=" bg-white border rounded-lg  flex flex-col h-full">
@@ -41,12 +39,12 @@ const Card = ({ data }) => {
                 </div>
                 {/* Action Button */}
                 <div className="flex items-center gap-2 flex-grow justify-center mt-3">
-                    <button className="w-1/2 btn hover:btn-accent">
+                    <Link to={`/update-page/${_id}`} className="w-1/2 btn hover:btn-accent">
                         Update
-                    </button>
-                    <button className="w-1/2 btn hover:btn-accent">
+                    </Link>
+                    <Link className="w-1/2 btn hover:btn-accent">
                         Delete
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>
