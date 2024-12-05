@@ -5,7 +5,7 @@ import 'react-tooltip/dist/react-tooltip.css'
 
 const MainLayout = () => {
     return (
-        <div className="">
+        <div className="dark:text-white">
             <div className="mxw sticky top-0 z-50">
                 <Navbar></Navbar>
             </div>

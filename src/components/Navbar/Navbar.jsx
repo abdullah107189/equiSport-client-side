@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
 import { Tooltip as ReactTooltip } from 'react-tooltip'
 import userLogo from '../../assets/profile.png'
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
+import { CiDark, CiLight } from "react-icons/ci";
 const Navbar = () => {
     const { user, logOutUser } = useContext(AuthContext)
     const li = <>
@@ -12,6 +13,16 @@ const Navbar = () => {
         <NavLink to="/addEquipment" className={({ isActive }) => isActive ? "btn-accent btn" : "btn"}>Add Equipment</NavLink>
         <NavLink to="/myEquipment" className={({ isActive }) => isActive ? "btn-accent btn" : "btn"}>My Equipment List</NavLink>
     </>
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme)
+        localStorage.setItem('theme', theme)
+    }, [theme])
+    const handleTogoleMode = () => {
+        const newTheme = theme === 'light' ? 'dark' : 'light'
+        setTheme(newTheme)
+
+    }
     const handleLogOut = () => {
         logOutUser()
             .then(() => {
@@ -58,7 +69,7 @@ const Navbar = () => {
                 <img
                     data-tip="React-tooltip"
                     data-tooltip-id="my-tooltip"
-                    data-tooltip-content={`User : ${user?.displayName}`}
+                    data-tooltip-content={`User : ${user ? user?.displayName : 'login please'}}`}
 
                     className="rounded-full w-12 h-12 object-cover bg-white"
                     alt={user ? user?.displayName : 'user'}
@@ -74,6 +85,14 @@ const Navbar = () => {
                             <NavLink to="/reg" className={({ isActive }) => isActive ? "btn-accent btn" : "btn"}>Register</NavLink>
                         </div>
                 }
+
+                <button className="btn hover:btn-accent transition-all transform duration-300 delay-100" onClick={handleTogoleMode}>
+                    {theme === 'light' ?
+                        <><CiDark className="w-5 h-5" /> Dark</>
+                        :
+                        <><CiLight className="w-5 h-5" /> Light</>
+                    }
+                </button>
             </div>
         </div >
     );

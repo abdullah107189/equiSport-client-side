@@ -10,3 +10,14 @@
 body{
   overflow-y: scroll;
 }
+:root {
+  --color-base: #ffffff;
+  --color-text: #1f2937;
+  --color-button: #00cdb7;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --color-base: #1f2937;
+  --color-text: #f9fafb;
+}
