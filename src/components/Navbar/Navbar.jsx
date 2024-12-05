@@ -58,13 +58,13 @@ const Navbar = () => {
                 <img
                     data-tip="React-tooltip"
                     data-tooltip-id="my-tooltip"
-                    data-tooltip-content={user?.displayName}
+                    data-tooltip-content={`User : ${user?.displayName}`}
 
                     className="rounded-full w-12 h-12 object-cover bg-white"
                     alt={user ? user?.displayName : 'user'}
                     // title={user?.displayName}
                     src={user ? user?.photoURL : userLogo} />
-                <ReactTooltip id="my-tooltip" place="top" variant="success" type="light" effect="float" />
+                <ReactTooltip id="my-tooltip" place="bottom" variant="success" type="light" effect="float" />
                 {
                     user ?
                         <button onClick={handleLogOut} className="btn">Log Out</button>

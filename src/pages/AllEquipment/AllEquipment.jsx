@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Slide } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
 
 const AllEquipment = () => {
@@ -27,8 +28,11 @@ const AllEquipment = () => {
             })
     }
     return (
-        <div className="">
-            <button onClick={handleSortByPrice} className={`${equipments.length === 0 ? 'hidden' : 'flex'} btn hover:btn-accent mb-2`}>Sort By Price</button>
+        <div>
+            <Slide direction="left" triggerOnce cascade="false">
+                <button onClick={handleSortByPrice} className={`${equipments.length === 0 ? 'hidden' : 'flex'} btn hover:btn-accent mb-2`}>Sort By Price</button>
+            </Slide>
+
             <div className=" md:overflow-auto overflow-x-scroll">
                 {
                     dataLoading ?
@@ -96,10 +100,8 @@ const AllEquipment = () => {
                                 </tbody>
                             </table>
                 }
-
-
             </div>
-        </div>
+        </div >
     );
 };
 
