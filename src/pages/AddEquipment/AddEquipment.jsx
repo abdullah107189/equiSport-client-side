@@ -20,13 +20,13 @@ const AddEquipment = () => {
             image: e.target.image.value,
             itemName: e.target.itemName.value,
             category: e.target.category.value,
-            price: e.target.price.value,
+            price: parseInt(e.target.price.value),
             rating: rating,
             customization: e.target.customization.value,
             processingTime: formattedDate,
             stockStatus: e.target.stockStatus.value,
             description: e.target.description.value,
-            authorUser:user?.email, 
+            authorUser: user?.email,
         };
         fetch('http://localhost:4545/add-equipments', {
             method: 'POST',
@@ -46,7 +46,7 @@ const AddEquipment = () => {
                 }
             })
             .catch(error => console.log(error))
-       
+
     };
 
     return (
@@ -100,7 +100,7 @@ const AddEquipment = () => {
                     <div className="mb-4">
                         <label htmlFor="rating" className="block text-sm font-medium">Rating</label>
                         <Rating
-                            initialRating={1}
+                            initialRating={0}
                             onChange={(rate) => setRating(rate)}
                             emptySymbol={<FaRegStar className="w-10 h-10" />}
                             fullSymbol={<FaStar className="w-10 h-10" />}

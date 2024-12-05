@@ -1,4 +1,5 @@
 import HomeProducts from "../../components/HomeProducts/HomeProducts";
+import LottieUse from "../../components/LottieUse/LottieUse";
 import Slider from "../../components/Slider/Slider";
 
 const Home = () => {
@@ -6,7 +7,7 @@ const Home = () => {
         <div>
             <Slider></Slider>
             <HomeProducts></HomeProducts>
-            
+            <LottieUse></LottieUse>
         </div>
     );
 };

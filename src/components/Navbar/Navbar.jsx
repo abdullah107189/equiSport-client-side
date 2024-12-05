@@ -1,24 +1,25 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { Tooltip as ReactTooltip } from 'react-tooltip'
 import userLogo from '../../assets/profile.png'
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
 const Navbar = () => {
-    const { user ,logOutUser} = useContext(AuthContext)
+    const { user, logOutUser } = useContext(AuthContext)
     const li = <>
         <NavLink to="/" className={({ isActive }) => isActive ? "btn-accent btn" : "btn"}>Home</NavLink>
         <NavLink to="/allEquipment" className={({ isActive }) => isActive ? "btn-accent btn" : "btn"}>All Sports Equipment</NavLink>
         <NavLink to="/addEquipment" className={({ isActive }) => isActive ? "btn-accent btn" : "btn"}>Add Equipment</NavLink>
         <NavLink to="/myEquipment" className={({ isActive }) => isActive ? "btn-accent btn" : "btn"}>My Equipment List</NavLink>
     </>
-    const handleLogOut = () =>{
+    const handleLogOut = () => {
         logOutUser()
-        .then(()=>{
-            Swal.fire({
-                title:"Logout Seccess",
-                icon:'success'
+            .then(() => {
+                Swal.fire({
+                    title: "Logout Seccess",
+                    icon: 'success'
+                })
             })
-        })
     }
     return (
         <div className="navbar bg-base-100 py-2 px-0 ">
@@ -53,11 +54,17 @@ const Navbar = () => {
             </div>
             <div className="navbar-end  gap-3">
 
+
                 <img
+                    data-tip="React-tooltip"
+                    data-tooltip-id="my-tooltip"
+                    data-tooltip-content={user?.displayName}
+
                     className="rounded-full w-12 h-12 object-cover bg-white"
                     alt={user ? user?.displayName : 'user'}
-                    title={user?.displayName}
+                    // title={user?.displayName}
                     src={user ? user?.photoURL : userLogo} />
+                <ReactTooltip id="my-tooltip" place="top" variant="success" type="light" effect="float" />
                 {
                     user ?
                         <button onClick={handleLogOut} className="btn">Log Out</button>

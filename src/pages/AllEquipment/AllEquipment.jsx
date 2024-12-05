@@ -11,13 +11,24 @@ const AllEquipment = () => {
                 setEquipments(data)
                 setDataLoading(false)
             })
-            .catch(()=>{
+            .catch(() => {
                 setDataLoading(false)
             })
     }, [])
+    const handleSortByPrice = () => {
+        fetch('http://localhost:4545/all-equipments/sortByPrice')
+            .then(res => res.json())
+            .then(data => {
+                setEquipments(data)
+                setDataLoading(false)
+            })
+            .catch(() => {
+                setDataLoading(false)
+            })
+    }
     return (
         <div className="">
-            <button className={`${equipments.length === 0 ? 'hidden' : 'flex'} btn hover:btn-accent mb-2`}>Sort By Price</button>
+            <button onClick={handleSortByPrice} className={`${equipments.length === 0 ? 'hidden' : 'flex'} btn hover:btn-accent mb-2`}>Sort By Price</button>
             <div className=" md:overflow-auto overflow-x-scroll">
                 {
                     dataLoading ?
