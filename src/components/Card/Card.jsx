@@ -1,8 +1,37 @@
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Card = ({ data }) => {
     const { image, itemName, category, price, rating, stockStatus, description, _id } = data;
+    const handleDelete = (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:4545/delete-equipment/${id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                        }
+                    })
 
+            }
+        });
+
+    }
     return (
         <div className=" bg-white border rounded-lg  flex flex-col h-full">
             {/* Image Section */}
@@ -42,9 +71,9 @@ const Card = ({ data }) => {
                     <Link to={`/update-page/${_id}`} className="w-1/2 btn hover:btn-accent">
                         Update
                     </Link>
-                    <Link className="w-1/2 btn hover:btn-accent">
+                    <button onClick={() => handleDelete(_id)} className="w-1/2 btn hover:btn-accent">
                         Delete
-                    </Link>
+                    </button>
                 </div>
             </div>
         </div>
