@@ -46,11 +46,11 @@ const AddEquipment = () => {
                 }
             })
             .catch(error => console.log(error))
-        e.target.reset();
+       
     };
 
     return (
-        <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
+        <div className="max-w-4xl mx-auto p-6 my-10 bg-white shadow-lg rounded-lg">
             <h2 className="text-3xl font-semibold mb-4 text-center">Add Product</h2>
             <form onSubmit={handleSubmit}>
                 <div className="grid md:grid-cols-2 grid-cols-1 gap-2">

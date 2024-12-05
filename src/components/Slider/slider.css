@@ -25,5 +25,5 @@
   background-color: #00cdb7;
 }
 .minH{
-    height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px);
 }
