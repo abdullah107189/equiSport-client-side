@@ -1,10 +1,11 @@
 import { Fade, Slide } from "react-awesome-reveal";
 import HomeProducts from "../../components/HomeProducts/HomeProducts";
 import faq from '../../assets/FAQq.gif'
+import community from '../../assets/community.gif'
 import Slider from "../../components/Slider/Slider";
 
 const Home = () => {
-   
+
     return (
         <div>
             <Fade cascade damping={0.4}>
@@ -12,9 +13,6 @@ const Home = () => {
             </Fade>
 
             <HomeProducts></HomeProducts>
-
-          
-
 
             <div className="md:flex justify-center gap-10 items-center my-10">
                 <div className="md:w-1/2">
@@ -57,6 +55,26 @@ const Home = () => {
                     </Slide>
                 </div>
             </div>
+            <section className="py-10 md:flex items-center justify-center gap-10">
+                <div className="md:w-1/2">
+                    <img className="w-full rounded-2xl" src={community} alt="" />
+                </div>
+                <div className="container mx-auto text-center md:w-1/2">
+                    <h2 className="text-4xl font-bold mb-4">Join Our Community</h2>
+                    <p className="mb-6 text-lg">Get the latest news, updates, and exclusive offers!</p>
+                    <div className="flex justify-center">
+                        <input
+                            type="email"
+                            placeholder="Enter your email"
+                            className=" bg-transparent p-3 rounded-l-lg lg:w-1/2 border focus:outline-none dark:focus:ring-white"
+                        />
+                        <button className="dark:bg-white btn rounded-l-none border text-accent  font-semibold py-3 px-6 rounded-r-lg dark:hover:bg-gray-200 transition duration-300">
+                            Subscribe
+                        </button>
+                    </div>
+                    <p className="mt-4 text-sm">We respect your privacy. Unsubscribe at any time.</p>
+                </div>
+            </section>
         </div>
     );
 };
