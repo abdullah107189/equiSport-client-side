@@ -49,7 +49,7 @@ const AllEquipment = () => {
                             </div>
                             :
                             <table className="table">
-                                <thead className="sticky  bg-gray-100 z-10">
+                                <thead className="sticky dark:bg-gray-900 dark:text-white bg-gray-100 z-10">
                                     <tr className="font-bold">
                                         <th>
                                             Number
@@ -64,7 +64,7 @@ const AllEquipment = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {equipments.map((equipment, idx) => <tr className="hover:bg-gray-100" key={equipment._id}>
+                                    {equipments.map((equipment, idx) => <tr className="dark:hover:bg-gray-900 hover:bg-gray-100" key={equipment._id}>
                                         <th>
                                             {idx + 1}
                                         </th>

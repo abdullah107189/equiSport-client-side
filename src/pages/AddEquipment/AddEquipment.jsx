@@ -56,7 +56,7 @@ const AddEquipment = () => {
     };
 
     return (
-        <div className="max-w-4xl mx-auto p-6 my-10 bg-white shadow-lg rounded-lg">
+        <div className="max-w-4xl mx-auto md:p-6 md:my-10  shadow-lg rounded-lg">
             <h2 className="text-3xl font-semibold mb-4 text-center">Add Product</h2>
             <form onSubmit={handleSubmit}>
                 <div className="grid md:grid-cols-2 grid-cols-1 gap-2">
@@ -133,7 +133,7 @@ const AddEquipment = () => {
                                 onChange={(date) => setStartDate(date)}
                                 dateFormat="dd/MM//yyyy"
                             />
-                            <p className=""><span className="moving-arrow lg:right-[47%] right-[35%]"><FaArrowLeft /></span>select this field</p>
+                            <p className=""><span className="moving-arrow lg:right-[47%] right-[35%] dark:text-white"><FaArrowLeft /></span>select this field</p>
                         </div>
                     </div>
 
@@ -186,7 +186,7 @@ const AddEquipment = () => {
                 <div className="mb-6">
                     <button
                         type="submit"
-                        className="w-full btn py-2 rounded-md hover:btn-accent"
+                        className="dark:border-white dark:text-white w-full btn py-2 rounded-md hover:btn-accent"
                     >
                         Add Product
                     </button>

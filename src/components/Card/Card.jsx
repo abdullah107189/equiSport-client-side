@@ -33,7 +33,7 @@ const Card = ({ data }) => {
 
     }
     return (
-        <div className=" bg-white border rounded-lg  flex flex-col h-full">
+        <div className=" dark:border-gray-500 border rounded-lg  flex flex-col h-full">
             {/* Image Section */}
             <img
                 src={image}
@@ -45,8 +45,8 @@ const Card = ({ data }) => {
             <div className="p-4 flex flex-col flex-grow">
                 <div className="flex-grow">
                     <h2 className="text-xl font-semibold">{itemName}</h2>
-                    <p className="text-sm text-gray-500 mt-1">Category: {category}</p>
-                    <p className="text-gray-600 mt-2 text-sm">{description}</p>
+                    <p className="text-sm dark:text-gray-300 text-gray-500 mt-1">Category: {category}</p>
+                    <p className="text-gray-600 dark:text-gray-400 mt-2 text-sm">{description}</p>
 
                     {/* Price and Rating */}
                     <div className="mt-4 flex items-center justify-between">

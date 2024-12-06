@@ -6,10 +6,16 @@
   .mxw {
     @apply max-w-[1440px] mx-auto px-4
   }
+
+  .btn {
+    @apply dark:border-gray-500
+  }
 }
-body{
+
+body {
   overflow-y: scroll;
 }
+
 :root {
   --color-base: #ffffff;
   --color-text: #1f2937;
@@ -21,7 +27,8 @@ body{
   --color-base: #1f2937;
   --color-text: #f9fafb;
 }
-*{
+
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;

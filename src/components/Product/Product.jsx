@@ -33,7 +33,7 @@ const Product = ({ product }) => {
                         {shortDescription}..{description.length > 30 ? <Link to={`/product-details/${_id}`} className="text-blue-500">Read More</Link> : ''}
                     </div>
 
-                    <div className="card-actions justify-end">
+                    <div className="card-actions justify-end mt-2 md:mt-0">
                         <Link to={`/product-details/${_id}`} className="badge dark:bg-transparent dark:border dark:border-white dark:text-white bg-slate-200 hover:bg-accent">View Details</Link>
                         <div className="badge badge-outline">{category}</div>
                         <div className="badge badge-outline">{rating} <FaStar></FaStar></div>
