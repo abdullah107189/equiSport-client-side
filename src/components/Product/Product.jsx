@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Fade } from "react-awesome-reveal";
 import { FaStar } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
@@ -7,7 +8,6 @@ const Product = ({ product }) => {
 
     const [shortDescription, setShortDescription] = useState('')
     useEffect(() => {
-
         if (description.length >= 30) {
             const shortDes = description.slice(0, 30)
             setShortDescription(shortDes)
@@ -15,13 +15,8 @@ const Product = ({ product }) => {
             setShortDescription(description)
         }
     }, [])
-    //     const onClick = useNavigate()
-    // const location = useLocation()
-    // const handleDetils = (id) => {
-    //     onclick()
-    // }
     return (
-        <div>
+        <Fade cascade direction="top">
             <div className="card bg-base-100  shadow-xl flex h-full">
                 <figure>
                     <img
@@ -39,13 +34,13 @@ const Product = ({ product }) => {
                     </div>
 
                     <div className="card-actions justify-end">
-                        <Link to={`/product-details/${_id}`} className="badge bg-slate-200 hover:bg-accent">View Details</Link>
+                        <Link to={`/product-details/${_id}`} className="badge dark:bg-transparent dark:border dark:border-white dark:text-white bg-slate-200 hover:bg-accent">View Details</Link>
                         <div className="badge badge-outline">{category}</div>
                         <div className="badge badge-outline">{rating} <FaStar></FaStar></div>
                     </div>
                 </div>
             </div>
-        </div >
+        </Fade>
     );
 };
 
