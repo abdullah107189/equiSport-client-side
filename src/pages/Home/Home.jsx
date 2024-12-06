@@ -12,15 +12,16 @@ const Home = () => {
                 <Slider></Slider>
             </Fade>
 
+
             <HomeProducts></HomeProducts>
 
-            <div className="md:flex justify-center gap-10 items-center my-10">
+            <div className="md:flex justify-center gap-10 items-center minH">
                 <div className="md:w-1/2">
                     <Slide direction="left" triggerOnce cascade damping={0.4}>
                         <img className="w-full" src={faq} alt="" />
                     </Slide>
                 </div>
-                <div className="md:w-1/2">
+                <div className="md:w-1/2 mt-5 md:m-0">
                     <Slide direction="right" triggerOnce cascade damping={0.4}>
                         <>
                             <div className="collapse collapse-plus bg-base-200">
@@ -55,11 +56,14 @@ const Home = () => {
                     </Slide>
                 </div>
             </div>
-            <section className="py-10 md:flex items-center justify-center gap-10">
+
+
+
+            <section className="md:flex items-center justify-center gap-10 minH">
                 <div className="md:w-1/2">
                     <img className="w-full rounded-2xl" src={community} alt="" />
                 </div>
-                <div className="container mx-auto text-center md:w-1/2">
+                <div className="container mx-auto text-center md:w-1/2 mt-5 md:m-0">
                     <h2 className="text-4xl font-bold mb-4">Join Our Community</h2>
                     <p className="mb-6 text-lg">Get the latest news, updates, and exclusive offers!</p>
                     <div className="flex justify-center">

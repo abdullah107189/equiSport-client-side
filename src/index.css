@@ -21,3 +21,8 @@ body{
   --color-base: #1f2937;
   --color-text: #f9fafb;
 }
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}

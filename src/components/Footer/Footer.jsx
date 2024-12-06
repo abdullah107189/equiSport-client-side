@@ -1,7 +1,7 @@
 import logo from '../../assets/EquiSports.webp'
 const Footer = () => {
     return (
-        <div className='bg-neutral text-white'>
+        <div className='bg-neutral text-white relative -bottom-1'>
             <div className="footer md:py-10 py-5 mxw">
                 <aside>
                     <img className='w-[150px] rounded-lg object-contain' src={logo} alt="" />
@@ -61,7 +61,8 @@ const Footer = () => {
                     </div>
                 </nav>
             </div>
-            <div className="footer footer-center bg-neutral p-4">
+
+            <div className="footer footer-center p-5">
                 <aside>
                     <p>Copyright © {new Date().getFullYear()} - All right reserved by Abdullah107189</p>
                 </aside>
