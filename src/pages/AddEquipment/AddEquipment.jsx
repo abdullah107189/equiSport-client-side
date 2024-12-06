@@ -28,7 +28,7 @@ const AddEquipment = () => {
             description: e.target.description.value,
             authorUser: user?.email,
         };
-        fetch('http://localhost:4545/add-equipments', {
+        fetch('https://equi-sports-server-side-ten.vercel.app/add-equipments', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -45,7 +45,13 @@ const AddEquipment = () => {
                     })
                 }
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                Swal.fire({
+                    text: error.messages,
+                    title: 'error is add equipment.jsx',
+                    icon: 'success'
+                })
+            })
 
     };
 

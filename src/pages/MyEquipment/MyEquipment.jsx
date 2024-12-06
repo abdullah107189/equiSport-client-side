@@ -9,7 +9,7 @@ const MyEquipment = () => {
     const { user } = useContext(AuthContext)
     const [datas, setDatas] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:4545/my-equipments`, {
+        fetch(`https://equi-sports-server-side-ten.vercel.app/my-equipments`, {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

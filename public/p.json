@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "image": "https://i.ibb.co.com/q5sQQD5/paris-2024-olympics-soccer.jpg",
+        "itemName": "Football",
+        "categoryName": "Football",
+        "description": "Durable and high-performance football for all conditions.",
+        "price": 29.99,
+        "rating": 4.5,
+        "customization": "Custom team logo printing",
+        "processingTime": "2-4 business days",
+        "stockStatus": 50
+    },
+    {
+        "id": 2,
+        "image": "https://i.ibb.co.com/mBMdfgR/soccer-ball-goal.webp",
+        "itemName": "Goalkeeper Gloves",
+        "categoryName": "Football",
+        "description": "Professional goalkeeper gloves with superior grip and protection.",
+        "price": 59.99,
+        "rating": 4.8,
+        "customization": "Custom size options",
+        "processingTime": "3-5 business days",
+        "stockStatus": 18
+    },
+    {
+        "id": 3,
+        "image": "https://i.ibb.co.com/PTbtWZP/GC111-1-Wikimedia.jpg",
+        "itemName": "Tennis Racket",
+        "categoryName": "Racket",
+        "description": "Lightweight and durable tennis racket for all skill levels.",
+        "price": 89.99,
+        "rating": 4.6,
+        "customization": "Custom string tension available",
+        "processingTime": "5-7 business days",
+        "stockStatus": 20
+    },
+    {
+        "id": 4,
+        "image": "https://i.ibb.co.com/VqpZbPs/badminton-racquet.webp",
+        "itemName": "Badminton Racket",
+        "categoryName": "Racket",
+        "description": "High-quality badminton racket for professional players.",
+        "price": 49.99,
+        "rating": 4.7,
+        "customization": "Custom string tension available",
+        "processingTime": "3-6 business days",
+        "stockStatus": 25
+    },
+    {
+        "id": 5,
+        "image": "https://i.ibb.co.com/nPXRhfK/images.jpg",
+        "itemName": "Cricket Bat",
+        "categoryName": "Cricket",
+        "description": "High-quality wooden cricket bat for professional players.",
+        "price": 120.99,
+        "rating": 4.8,
+        "customization": "Extra grip available",
+        "processingTime": "3-5 business days",
+        "stockStatus": 15
+    },
+    {
+        "id": 6,
+        "image": "https://i.ibb.co.com/tLz8L5d/Cricket-ball-red-madeinaustralia.jpg",
+        "itemName": "Cricket Ball",
+        "categoryName": "Cricket",
+        "description": "Durable leather cricket ball for all types of games.",
+        "price": 14.99,
+        "rating": 4.5,
+        "customization": "Custom logo printing",
+        "processingTime": "2-4 business days",
+        "stockStatus": 50
+    },
+    {
+        "id": 7,
+        "image": "https://i.ibb.co.com/TgdX417/pexels-pixabay-358042.jpg",
+        "itemName": "Basketball",
+        "categoryName": "Basketball",
+        "description": "Professional-grade basketball with excellent grip and bounce.",
+        "price": 34.99,
+        "rating": 4.7,
+        "customization": "Custom color options",
+        "processingTime": "3-6 business days",
+        "stockStatus": 30
+    },
+    {
+        "id": 8,
+        "image": "https://i.ibb.co.com/c6LxsZ9/images.jpg",
+        "itemName": "Basketball Shoes",
+        "categoryName": "Basketball",
+        "description": "Lightweight and durable basketball shoes for optimal performance.",
+        "price": 89.99,
+        "rating": 4.8,
+        "customization": "Custom size options",
+        "processingTime": "5-7 business days",
+        "stockStatus": 10
+    }
+]

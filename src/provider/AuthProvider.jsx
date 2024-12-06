@@ -38,7 +38,6 @@ const AuthProvider = ({ children }) => {
             setLoading(true)
             if (currentUser) {
                 setUser(currentUser)
-                console.log(currentUser);
                 setLoading(false)
             }
             else {

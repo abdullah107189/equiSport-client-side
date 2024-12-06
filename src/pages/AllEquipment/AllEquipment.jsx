@@ -6,7 +6,7 @@ const AllEquipment = () => {
     const [equipments, setEquipments] = useState([])
     const [dataLoading, setDataLoading] = useState(true)
     useEffect(() => {
-        fetch('http://localhost:4545/all-equipments')
+        fetch('https://equi-sports-server-side-ten.vercel.app/all-equipments')
             .then(res => res.json())
             .then(data => {
                 setEquipments(data)
@@ -17,7 +17,7 @@ const AllEquipment = () => {
             })
     }, [])
     const handleSortByPrice = () => {
-        fetch('http://localhost:4545/all-equipments/sortByPrice')
+        fetch('https://equi-sports-server-side-ten.vercel.app/all-equipments/sortByPrice')
             .then(res => res.json())
             .then(data => {
                 setEquipments(data)

@@ -32,7 +32,7 @@ const UpdatePage = () => {
             stockStatus: e.target.stockStatus.value,
             description: e.target.description.value,
         };
-        fetch(`http://localhost:4545/update-equipments/${_id}`, {
+        fetch(`https://equi-sports-server-side-ten.vercel.app/update-equipments/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -51,10 +51,15 @@ const UpdatePage = () => {
                 }
 
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                Swal.fire({
+                    text: error.messages,
+                    title: 'error is updatePage.jsx',
+                    icon: 'success'
+                })
+            })
         e.target.reset();
     };
-    console.log(loadData);
     return (
         <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
             <h2 className="text-3xl font-semibold mb-4 text-center">Add Product</h2>

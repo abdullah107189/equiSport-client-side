@@ -14,7 +14,7 @@ const Card = ({ data }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:4545/delete-equipment/${id}`, {
+                fetch(`https://equi-sports-server-side-ten.vercel.app/delete-equipment/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
