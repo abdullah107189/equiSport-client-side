@@ -56,16 +56,14 @@ const Navbar = () => {
                         {li}
                     </ul>
                 </div>
-                <p className="text-3xl font-bold italic"><span className="text-accent">E</span>qui<span className="text-accent">S</span>ports</p>
+                <a href="/" className="md:text-3xl text-4xl ml-2 flex font-bold italic"><span className="text-accent">E</span><span className="md:flex hidden">qui</span><span className="text-accent">S</span><span className="md:flex hidden">ports</span></a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1 gap-3">
+                <ul className="menu menu-horizontal px-1 md:gap-3 gap-1">
                     {li}
                 </ul>
             </div>
-            <div className="navbar-end  gap-3">
-
-
+            <div className="navbar-end  md:gap-3 gap-1">
                 <img
                     data-tip="React-tooltip"
                     data-tooltip-id="my-tooltip"
@@ -80,19 +78,11 @@ const Navbar = () => {
                     user ?
                         <button onClick={handleLogOut} className="btn">Log Out</button>
                         :
-                        <div className="flex gap-3">
+                        <div className="flex md:gap-3 gap-1">
                             <NavLink to="/login" className={({ isActive }) => isActive ? "btn-accent btn" : "btn"}>Login</NavLink>
                             <NavLink to="/reg" className={({ isActive }) => isActive ? "btn-accent btn" : "btn"}>Register</NavLink>
                         </div>
                 }
-
-                {/* <button className="btn hover:btn-accent transition-all transform duration-300 delay-100" onClick={handleTogoleMode}>
-                    {theme === 'light' ?
-                        <><CiDark className="w-5 h-5" /> Dark</>
-                        :
-                        <><CiLight className="w-5 h-5" /> Light</>
-                    }
-                </button> */}
                 <label className="grid cursor-pointer place-items-center">
                     <input
                         type="checkbox"
