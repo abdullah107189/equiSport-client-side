@@ -24,6 +24,8 @@
 .swiper-pagination-bullet-active {
   background-color: #00cdb7;
 }
-.minH{
+@media (min-width: 1024px) {
+  .minH {
     min-height: calc(100vh - 80px);
+  }
 }

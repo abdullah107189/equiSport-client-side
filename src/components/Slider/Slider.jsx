@@ -55,7 +55,7 @@ const Slider = () => {
                     className="mySwiper"
                 >
                     <SwiperSlide>
-                        <div className='grid md:grid-cols-2 lg:w-4/5 mx-auto lg:gap-10 items-center justify-between  md:h-[600px] h-[500px] overflow-hidden lg:minH'>
+                        <div className='grid md:grid-cols-2 lg:w-4/5 mx-auto lg:gap-10 items-center justify-between  h-[500px] md:h-[600px]  minH'>
                             <div className="flex flex-col items-center justify-center bg-cover bg-center ">
                                 <h1 className="md:text-4xl text-xl font-bold  text-center drop-shadow-md">
                                     Equip Your Game with the Best Gear
@@ -79,7 +79,7 @@ const Slider = () => {
                     </SwiperSlide>
 
                     <SwiperSlide>
-                        <div className=' lg:gap-10 md:gap-5 items-center justify-between  md:h-[600px] h-[500px] overflow-hidden lg:minH'>
+                        <div className=' lg:gap-10 md:gap-5 md:flex items-center justify-between md:h-[600px] h-[500px] overflow-hidden minH'>
                             <section className="lg:py-16 lg:px-10 md:p-5">
                                 <div className="text-center mb-12">
                                     <h2 className="text-3xl font-semibold">Shop by Sport</h2>
@@ -98,7 +98,7 @@ const Slider = () => {
                     </SwiperSlide>
 
                     <SwiperSlide>
-                        <section className="lg:py-16 lg:px-16 p-2 md:h-[600px] h-[500px] overflow-hidden lg:minH">
+                        <section className="lg:py-16 lg:px-16 md:flex items-center flex-col justify-center p-2 md:h-[600px] h-[500px] overflow-hidden minH">
                             <div className="text-center lg:mb-12 mb-3">
                                 <h2 className="md:text-4xl text-xl font-extrabold">What Our Customers Say</h2>
                                 <p className="text-lg md:mt-4 opacity-80">Hear from athletes who love our gear.</p>
