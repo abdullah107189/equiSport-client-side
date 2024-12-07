@@ -15,7 +15,7 @@ const Home = () => {
 
             <HomeProducts></HomeProducts>
 
-            <div className="md:flex justify-center gap-10 items-center md:p-0 py-10 md:minH">
+            <div className="md:flex justify-center gap-10 items-center minH">
                 <div className="md:w-1/2">
                     <Slide direction="left" triggerOnce cascade damping={0.4}>
                         <img className="w-full" src={faq} alt="" />
@@ -59,7 +59,7 @@ const Home = () => {
 
 
 
-            <section className="md:flex items-center justify-center gap-10 md:minH md:p-0 py-10">
+            <section className="md:flex items-center justify-center gap-10 minH ">
                 <div className="md:w-1/2">
                     <img className="w-full rounded-2xl" src={community} alt="" />
                 </div>

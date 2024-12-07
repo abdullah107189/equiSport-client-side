@@ -38,12 +38,12 @@ const Slider = () => {
                     slidesPerView={1}
                     spaceBetween={30}
                     loop={true}
-                    // autoplay={{
-                    //     delay: 2500,
-                    //     disableOnInteraction: false,
-                    //     pauseOnMouseEnter: true,
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true,
 
-                    // }}
+                    }}
                     pagination={{
                         clickable: true,
                         renderBullet: (index, className) => {
