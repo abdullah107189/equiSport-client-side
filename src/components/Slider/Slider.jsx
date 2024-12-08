@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './slider.css'
-import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 
 const Slider = () => {
     const categories = [
@@ -50,8 +50,8 @@ const Slider = () => {
                             return `<span class="${className} custom-pagination"></span>`;
                         },
                     }}
-                    navigation={true}
-                    modules={[Pagination, Navigation, Autoplay]}
+                    
+                    modules={[Pagination, Autoplay]}
                     className="mySwiper"
                 >
                     <SwiperSlide>

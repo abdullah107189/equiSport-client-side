@@ -4,7 +4,6 @@ import userLogo from '../../assets/profile.png'
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
-import { CiDark, CiLight } from "react-icons/ci";
 const Navbar = () => {
     const { user, logOutUser } = useContext(AuthContext)
     const li = <>
@@ -67,7 +66,7 @@ const Navbar = () => {
                 <img
                     data-tip="React-tooltip"
                     data-tooltip-id="my-tooltip"
-                    data-tooltip-content={`User : ${user ? user?.displayName : 'login please'}}`}
+                    data-tooltip-content={`User : ${user ? user?.displayName : 'login please'}`}
 
                     className="rounded-full w-12 h-12 object-cover bg-white"
                     alt={user ? user?.displayName : 'user'}

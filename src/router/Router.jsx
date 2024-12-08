@@ -12,7 +12,6 @@ import Register from "../pages/Form/Register/Register";
 import PrivetRoute from "../route/PrivetRoute";
 import DetailsPage from "../pages/DetailsPage/DetailsPage";
 import UpdatePage from "../pages/UpdatePage/UpdatePage";
-import ProductDetails from "../components/ProductDetails/ProductDetails";
 const Router = createBrowserRouter([
     {
         path: "/",

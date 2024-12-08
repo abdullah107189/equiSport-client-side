@@ -3,11 +3,11 @@ import { useContext, useState } from "react";
 import './updatePage.css'
 import { FaArrowLeft, FaRegStar, FaStar } from "react-icons/fa";
 import DatePicker from "react-datepicker";
-
 import "react-datepicker/dist/react-datepicker.css";
 import Rating from "react-rating";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
+
 const UpdatePage = () => {
     const loadData = useLoaderData()
     const {

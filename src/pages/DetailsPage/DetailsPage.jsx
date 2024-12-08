@@ -1,7 +1,6 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
 
 const DetailsPage = () => {
-
     const equipmentInfo = useLoaderData()
     const {
         image, itemName, category, price, rating, customization, processingTime, stockStatus, description, authorUser
