@@ -28,7 +28,7 @@ const AllEquipment = () => {
             })
     }
     return (
-        <div>
+        <div className="mxw">
             <Slide direction="left" triggerOnce cascade="false">
                 <button onClick={handleSortByPrice} className={`${equipments.length === 0 ? 'hidden' : 'flex'} btn hover:btn-accent mb-2`}>Sort By Price</button>
             </Slide>

@@ -38,12 +38,12 @@ const Slider = () => {
                     slidesPerView={1}
                     spaceBetween={30}
                     loop={true}
-                    autoplay={{
-                        delay: 2500,
-                        disableOnInteraction: false,
-                        pauseOnMouseEnter: true,
+                    // autoplay={{
+                    //     delay: 2500,
+                    //     disableOnInteraction: false,
+                    //     pauseOnMouseEnter: true,
 
-                    }}
+                    // }}
                     pagination={{
                         clickable: true,
                         renderBullet: (index, className) => {
@@ -52,10 +52,10 @@ const Slider = () => {
                     }}
 
                     modules={[Pagination, Autoplay]}
-                    className="mySwiper"
+                    className="mySwiper "
                 >
                     <SwiperSlide>
-                        <div className='grid md:grid-cols-2 lg:w-4/5 mx-auto lg:gap-10 items-center justify-between  h-[500px] md:h-[600px]  minH'>
+                        <div className='grid md:grid-cols-2 lg:w-4/5 mx-auto lg:gap-10 items-center justify-between h-[500px] lg:h-[60vh]  '>
                             <div className="flex flex-col items-center justify-center bg-cover bg-center ">
                                 <h1 className="md:text-4xl text-xl font-bold  text-center drop-shadow-md">
                                     Equip Your Game with the Best Gear
@@ -64,10 +64,10 @@ const Slider = () => {
                                     Explore high-quality sports equipment designed for champions like you.
                                 </p>
                                 <div className="md:mt-6 mt-2">
-                                    <button className="bg-indigo-500 hover:bg-indigo-600  px-6 py-3 rounded-md transition">
+                                    <button className="activeActionBtn px-6 py-3">
                                         Shop Now
                                     </button>
-                                    <button className="ml-4 bg-white hover:bg-gray-100 text-indigo-500 px-6 py-3 rounded-md border border-indigo-500 transition">
+                                    <button className="ml-4 px-6 py-3 actionBtn">
                                         Learn More
                                     </button>
                                 </div>
@@ -79,10 +79,10 @@ const Slider = () => {
                     </SwiperSlide>
 
                     <SwiperSlide>
-                        <div className=' lg:gap-10 md:gap-5 md:flex items-center justify-between md:h-[600px] h-[500px] overflow-hidden minH'>
-                            <section className="lg:py-16 lg:px-10 md:p-5">
+                        <div className=' lg:gap-10 md:gap-5 md:flex items-center justify-between lg:h-[60vh] h-[500px] overflow-hidden '>
+                            <section className="lg:py-16 ">
                                 <div className="text-center mb-12">
-                                    <h2 className="text-3xl font-semibold">Shop by Sport</h2>
+                                    <h2 className="md:text-4xl text-xl font-bold  text-center drop-shadow-md">Shop by Sport</h2>
                                     <p className=" mt-2">Find gear tailored for your game.</p>
                                 </div>
                                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -98,9 +98,9 @@ const Slider = () => {
                     </SwiperSlide>
 
                     <SwiperSlide>
-                        <section className="lg:py-16 lg:px-16 md:flex items-center flex-col justify-center p-2 md:h-[600px] h-[500px] overflow-hidden minH">
+                        <section className="lg:py-16  md:flex items-center flex-col justify-center lg:h-[60vh] h-[500px] overflow-hidden ">
                             <div className="text-center lg:mb-12 mb-3">
-                                <h2 className="md:text-4xl text-xl font-extrabold">What Our Customers Say</h2>
+                                <h2 className="md:text-4xl text-xl font-bold  text-center drop-shadow-md">What Our Customers Say</h2>
                                 <p className="text-lg md:mt-4 opacity-80">Hear from athletes who love our gear.</p>
                             </div>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 gap-3">

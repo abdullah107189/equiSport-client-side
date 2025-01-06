@@ -7,7 +7,7 @@ import Slider from "../../components/Slider/Slider";
 const Home = () => {
 
     return (
-        <div>
+        <div className="mxw">
             <Fade cascade damping={0.4}>
                 <Slider></Slider>
             </Fade>
@@ -59,8 +59,8 @@ const Home = () => {
 
 
 
-            <section className="md:flex items-center justify-center gap-10 minH md:py-10 py-5">
-                <div className="md:w-1/2">
+            <section className="md:flex items-center justify-center gap-10 minH md:my-10 my-5 rounded-r-full shadow-lg">
+                <div className="md:w-1/2 ">
                     <img className="w-full rounded-2xl" src={community} alt="" />
                 </div>
                 <div className="container mx-auto text-center md:w-1/2 mt-5 md:m-0">

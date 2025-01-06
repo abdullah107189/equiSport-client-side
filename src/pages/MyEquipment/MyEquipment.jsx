@@ -27,7 +27,7 @@ const MyEquipment = () => {
     }, [datas])
 
     return (
-        <div className="">
+        <div className="mxw">
             {
                 dataLoading ? <div className="col-span-4 minH"><LoadingPage></LoadingPage></div>
                     :

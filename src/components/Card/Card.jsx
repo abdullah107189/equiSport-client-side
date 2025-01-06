@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
+// eslint-disable-next-line react/prop-types
 const Card = ({ data }) => {
+    // eslint-disable-next-line react/prop-types
     const { image, itemName, category, price, rating, stockStatus, description, _id } = data;
     const handleDelete = (id) => {
         Swal.fire({
@@ -19,6 +21,7 @@ const Card = ({ data }) => {
                 })
                     .then(res => res.json())
                     .then(data => {
+                        // eslint-disable-next-line react/prop-types
                         if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",

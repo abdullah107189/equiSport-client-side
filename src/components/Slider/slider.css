@@ -9,25 +9,31 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  top: -40px;
+  /* top: -40px; */
   position: relative;
 }
+
 .swiper-pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    bottom: 10px; /* Adjust this for vertical placement */
-    position: absolute;
-    width: 100%;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 10px;
+  position: absolute;
+  width: 100%;
+}
+
 .swiper-pagination-bullet-active {
   background-color: #00cdb7;
 }
 
 @media (min-width: 1024px) {
   .minH {
-    min-height: calc(100vh - 80px);
+    min-height: calc(75vh);
     padding: 0;
   }
+}
+
+.hFull {
+  min-height: calc(100vh - 69px);
+  padding: 0;
 }
