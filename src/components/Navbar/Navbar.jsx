@@ -63,23 +63,25 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end  md:gap-3 gap-1">
-                <img
-                    data-tip="React-tooltip"
-                    data-tooltip-id="my-tooltip"
-                    data-tooltip-content={`User : ${user ? user?.displayName : 'login please'}`}
+                {
+                    user && <img
+                        data-tip="React-tooltip"
+                        data-tooltip-id="my-tooltip"
+                        data-tooltip-content={`User : ${user && user?.displayName}`}
+                        className="rounded-full w-9 h-9 object-cover bg-white"
+                        alt={user && user?.displayName}
+                        // title={user?.displayName}
+                        src={user && user?.photoURL} />
+                }
 
-                    className="rounded-full w-12 h-12 object-cover bg-white"
-                    alt={user ? user?.displayName : 'user'}
-                    // title={user?.displayName}
-                    src={user ? user?.photoURL : userLogo} />
                 <ReactTooltip id="my-tooltip" place="bottom" variant="success" type="light" effect="float" />
                 {
                     user ?
-                        <button onClick={handleLogOut} className="PBtn">Log Out</button>
+                        <button onClick={handleLogOut} className="actionBtn">Log Out</button>
                         :
                         <div className="flex md:gap-3 gap-1">
-                            <NavLink to="/login" className={({ isActive }) => isActive ? "activePBtn" : "PBtn"}>Login</NavLink>
-                            <NavLink to="/reg" className={({ isActive }) => isActive ? "activePBtn" : "PBtn"}>Register</NavLink>
+                            <NavLink to="/login" className={({ isActive }) => isActive ? "activeActionBtn" : "actionBtn"}>Login</NavLink>
+                            <NavLink to="/reg" className={({ isActive }) => isActive ? "activeActionBtn" : "actionBtn"}>Register</NavLink>
                         </div>
                 }
                 <label className="grid cursor-pointer place-items-center">

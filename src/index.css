@@ -17,6 +17,13 @@
   .activePBtn{
     @apply bg-transparent px-3 py-1  exo-2-font border-b-2 border-[#00cdb7] text-[#00cdb7]
   }
+ 
+  .actionBtn{
+    @apply border-[#00cdb7] border text-[#00cdb7] px-3 py-1 rounded-full hover:bg-[#00cdb7] hover:text-white transform duration-200
+  }
+  .activeActionBtn{
+    @apply bg-[#00cdb7] text-white px-3 py-1 rounded-full
+  }
 }
 
 body {
@@ -29,7 +36,7 @@ body {
 }
 
 :root {
-  --color-base: #ffffff;
+  --color-base: #fafafa;
   --color-text: #1f2937;
   --color-button: #00cdb7;
 }

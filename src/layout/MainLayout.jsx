@@ -6,7 +6,7 @@ import 'react-tooltip/dist/react-tooltip.css'
 const MainLayout = () => {
 
     return (
-        <div className="dark:text-white exo-2-font">
+        <div className="dark:text-white exo-2-font ">
             <ScrollRestoration />
             <div className="mxw sticky top-0 z-50">
                 <Navbar></Navbar>
