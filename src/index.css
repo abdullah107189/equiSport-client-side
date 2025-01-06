@@ -11,6 +11,12 @@
   .btn {
     @apply dark:border-gray-500
   }
+  .PBtn{
+    @apply bg-transparent px-3 py-1  exo-2-font hover:border-b-2 border-[#00cdb7] transform duration-100 hover:text-[#00cdb7]
+  }
+  .activePBtn{
+    @apply bg-transparent px-3 py-1  exo-2-font border-b-2 border-[#00cdb7] text-[#00cdb7]
+  }
 }
 
 body {

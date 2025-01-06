@@ -7,10 +7,10 @@ import Swal from "sweetalert2";
 const Navbar = () => {
     const { user, logOutUser } = useContext(AuthContext)
     const li = <>
-        <NavLink to="/" className={({ isActive }) => isActive ? "btn-accent btn" : "btn"}>Home</NavLink>
-        <NavLink to="/allEquipment" className={({ isActive }) => isActive ? "btn-accent btn" : "btn"}>All Sports Equipment</NavLink>
-        <NavLink to="/addEquipment" className={({ isActive }) => isActive ? "btn-accent btn" : "btn"}>Add Equipment</NavLink>
-        <NavLink to="/myEquipment" className={({ isActive }) => isActive ? "btn-accent btn" : "btn"}>My Equipment List</NavLink>
+        <NavLink to="/" className={({ isActive }) => isActive ? "activePBtn" : "PBtn"}>Home</NavLink>
+        <NavLink to="/allEquipment" className={({ isActive }) => isActive ? "activePBtn" : "PBtn"}>All Sports Equipment</NavLink>
+        <NavLink to="/addEquipment" className={({ isActive }) => isActive ? "activePBtn" : "PBtn"}>Add Equipment</NavLink>
+        <NavLink to="/myEquipment" className={({ isActive }) => isActive ? "activePBtn" : "PBtn"}>My Equipment List</NavLink>
     </>
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
     useEffect(() => {
@@ -75,11 +75,11 @@ const Navbar = () => {
                 <ReactTooltip id="my-tooltip" place="bottom" variant="success" type="light" effect="float" />
                 {
                     user ?
-                        <button onClick={handleLogOut} className="btn">Log Out</button>
+                        <button onClick={handleLogOut} className="PBtn">Log Out</button>
                         :
                         <div className="flex md:gap-3 gap-1">
-                            <NavLink to="/login" className={({ isActive }) => isActive ? "btn-accent btn" : "btn"}>Login</NavLink>
-                            <NavLink to="/reg" className={({ isActive }) => isActive ? "btn-accent btn" : "btn"}>Register</NavLink>
+                            <NavLink to="/login" className={({ isActive }) => isActive ? "activePBtn" : "PBtn"}>Login</NavLink>
+                            <NavLink to="/reg" className={({ isActive }) => isActive ? "activePBtn" : "PBtn"}>Register</NavLink>
                         </div>
                 }
                 <label className="grid cursor-pointer place-items-center">

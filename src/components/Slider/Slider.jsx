@@ -50,7 +50,7 @@ const Slider = () => {
                             return `<span class="${className} custom-pagination"></span>`;
                         },
                     }}
-                    
+
                     modules={[Pagination, Autoplay]}
                     className="mySwiper"
                 >
