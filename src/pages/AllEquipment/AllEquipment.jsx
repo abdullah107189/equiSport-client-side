@@ -31,7 +31,7 @@ const AllEquipment = () => {
                 <select
                     defaultValue={'default'}
                     onChange={handleSortChange}
-                    className="flex cursor-pointer items-center px-4 py-2 border border-gray-300 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="flex cursor-pointer items-center px-4 py-2 border border-gray-300 rounded-lg bg-white dark:bg-gray-700/20 dark:text-white text-gray-700 focus:outline-none "
                 >
                     <option value="default">
                         <FaSortAmountUp className="inline mr-2" />

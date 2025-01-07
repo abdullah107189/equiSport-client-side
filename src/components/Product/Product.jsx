@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Fade } from "react-awesome-reveal";
 import { Rating } from '@smastrom/react-rating'
-import '@smastrom/react-rating/style.css'
 import { Link } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types

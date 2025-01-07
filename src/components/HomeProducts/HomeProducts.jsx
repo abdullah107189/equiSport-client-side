@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Product from "../Product/Product";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 const HomeProducts = () => {
     const [products, setProducts] = useState([])
     const [dataLoadint, setDataLoading] = useState(true);
@@ -21,7 +22,7 @@ const HomeProducts = () => {
     }, [])
     return (
         <div className="py-20" id="products">
-            <h1 className="md:text-5xl text-2xl text-center md:pb-10 pb-5 font-bold">Euipments Section</h1>
+            <h1 className="md:text-5xl text-2xl text-center md:pb-10 pb-5 font-bold">Equipment</h1>
             <div className="grid xl:grid-cols-5 lg:grid-cols-4 gap-2 md:grid-cols-3">
                 {/* <div className="xl:col-span-4 lg:col-span-3 md:col-span-2  grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-3 gap-5"> */}
                 {
@@ -59,11 +60,13 @@ const HomeProducts = () => {
                             </div>
                         </div>
                         :
-                        products.map(product => <Product key={product._id} product={product}></Product>)
+                        products.slice(0, 5).map(product => <Product key={product._id} product={product}></Product>)
                 }
-                {/* </div> */}
             </div>
-        </div>
+            <Link to={'/allEquipment'} className="w-full flex justify-center md:py-10 py-5">
+                <button className="actionBtn">See All Equipment</button>
+            </Link>
+        </div >
     );
 };
 

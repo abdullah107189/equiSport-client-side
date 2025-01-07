@@ -6,6 +6,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './slider.css'
 import { Pagination, Autoplay } from 'swiper/modules';
+import { Link } from 'react-router-dom';
 
 const Slider = () => {
     const categories = [
@@ -64,12 +65,12 @@ const Slider = () => {
                                     Explore high-quality sports equipment designed for champions like you.
                                 </p>
                                 <div className="md:mt-6 mt-2">
-                                    <button className="activeActionBtn px-6 py-3">
+                                    <Link to={'/allEquipment'} className="activeActionBtn px-6 py-3">
                                         Shop Now
-                                    </button>
-                                    <button className="ml-4 px-6 py-3 actionBtn">
+                                    </Link>
+                                    <Link to={'/allEquipment'} className="ml-4 px-6 py-3 actionBtn">
                                         Learn More
-                                    </button>
+                                    </Link>
                                 </div>
                             </div>
                             <div className='mx-auto'>

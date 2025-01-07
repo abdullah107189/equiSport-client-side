@@ -17,7 +17,7 @@ const Home = () => {
             <HomeProducts></HomeProducts>
 
             {/* faq section  */}
-            <h1 className="md:text-5xl text-2xl text-center md:pt-20 pt-5 font-bold" id="faq">FAQ Section</h1>
+            <h1 className="md:text-5xl text-2xl text-center md:pt-20 pt-5 font-bold" id="faq">FAQ</h1>
             <div className="md:flex justify-center gap-10 items-center minH md:py-10 py-5">
                 <div className="md:w-1/2">
                     <Slide direction="left" triggerOnce cascade damping={0.4}>

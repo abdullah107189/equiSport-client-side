@@ -44,7 +44,7 @@ const Navbar = () => {
             })
     }
     return (
-        <div className="bg-[#efefef] dark:bg-[#1f2937] px-4">
+        <div className={`${isWFull ? '' : 'mxw'} bg-[#efefef] dark:bg-[#1f2937] px-4 `}>
             <div className={`${isWFull ? 'mxw' : ''} navbar py-2 px-0 `}>
                 <div className="navbar-start">
                     <div className="dropdown">

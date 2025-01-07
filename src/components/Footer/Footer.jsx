@@ -13,16 +13,16 @@ const Footer = () => {
                 <nav>
                     <h3 className="footer-title font-semibold mb-2">Company</h3>
                     <ul className="space-y-2">
-                        <li><a href="#home" className="hover:text-gray-200">About Us</a></li>
-                        <li><a href="#contact" className="hover:text-gray-200">Contact</a></li>
-                        <li><a href="#products" className="hover:text-gray-200">Products</a></li>
+                        <li><a href="/#home" className="hover:text-gray-200">About Us</a></li>
+                        <li><a href="/#contact" className="hover:text-gray-200">Contact</a></li>
+                        <li><a href="/#products" className="hover:text-gray-200">Products</a></li>
                     </ul>
                 </nav>
                 <nav>
                     <h3 className="footer-title font-semibold mb-2">Help</h3>
                     <ul className="space-y-2">
-                        <li><a href="#faq" className="hover:text-gray-200">FAQ</a></li>
-                        <li><a href="#offers" className="hover:text-gray-200">Offers</a></li>
+                        <li><a href="/#faq" className="hover:text-gray-200">FAQ</a></li>
+                        <li><a href="/#offers" className="hover:text-gray-200">Offers</a></li>
                     </ul>
                 </nav>
                 <nav>
