@@ -35,7 +35,7 @@ const Router = createBrowserRouter([
             },
             {
                 path: 'details-page/:id',
-                element: <PrivetRoute> <DetailsPage></DetailsPage></PrivetRoute>,
+                element: <DetailsPage></DetailsPage>,
                 loader: ({ params }) => fetch(`https://equi-sports-server-side-ten.vercel.app/all-equipments/${params.id}`)
             },
             {

@@ -22,7 +22,7 @@ const Product = ({ product }) => {
     }, [])
     return (
         <Fade cascade direction="top">
-            <Link to={`/product-details/${_id}`} className="card bg-base-100 relative shadow-xl flex h-full group hover:scale-[1.02] transform duration-200 ">
+            <Link to={`/details-page/${_id}`} className="card bg-base-100 dark:bg-gray-200/10 relative shadow-xl flex h-full group hover:scale-[1.02] transform duration-200 ">
                 <figure>
                     <img
                         className="w-full md:h-[150px] h-[250px] object-cover"

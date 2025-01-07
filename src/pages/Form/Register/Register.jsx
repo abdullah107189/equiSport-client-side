@@ -80,7 +80,7 @@ const Register = () => {
                 <div className="md:w-1/2 md:flex hidden z-10">
                     <img className="md:w-2/3 mx-auto" src={singUp} alt="" />
                 </div>
-                <div className="md:w-1/2 w-full z-10">
+                <div className="md:w-1/2 w-full z-10 p-5">
                     <div className="w-full xl:w-2/3 md:w-4/5 md:mr-auto md:p-8 p-4 rounded-lg shadow-xl border border-gray-300 bg-white/10 text-white backdrop-blur-md">
                         <h2 className="text-3xl font-semibold text-center mb-6 ">Register</h2>
                         <form onSubmit={handleSubmit}>

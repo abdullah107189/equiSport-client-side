@@ -76,17 +76,16 @@ const Login = () => {
 
     return (
         <div className="loginBg">
-            <div className="bg-black/50 absolute inset-0 "></div>
+            <div className="bg-black/50 absolute inset-0 -bottom-80"></div>
             <div className=" mxw flex justify-between relative items-center md:py-10 py-5 h-screen  p-5 ">
                 <div className="md:w-1/2 md:flex hidden z-10">
                     <img className="md:w-2/3 mx-auto" src={loginPhoto} alt="" />
                 </div>
-
-                <div className="md:w-1/2 w-full z-10">
-                    <div className="w-full xl:w-2/3 md:w-4/5 md:mr-auto md:p-8 p-4 rounded-lg shadow-xl border border-gray-300 bg-white/10 text-white backdrop-blur-md">
+                <div className="md:w-1/2 w-full z-10 ">
+                    <div className="w-full xl:w-2/3 md:w-4/5 md:mr-auto md:p-8 p-4 rounded-lg shadow-xl border border-gray-300 bg-white/10 backdrop-blur-md text-white ">
                         <h2 className="text-3xl font-semibold text-center mb-6">Login</h2>
                         <form onSubmit={handleSubmit}>
-                            <div className="mb-4">
+                            <div className="mb-4 ">
                                 <label htmlFor="email" className="block text-sm font-medium">Email</label>
                                 <input
                                     type="email"
@@ -112,7 +111,7 @@ const Login = () => {
 
                             <button type="submit" className="w-full bg-indigo-500 text-white py-2 rounded-md focus:outline-none hover:bg-indigo-600 transition duration-200">{loading ? <span className="loading loading-dots loading-lg"></span> : 'Login'}</button>
                         </form>
-                        <div className="text-sm ">Are you new this side <Link to={'/reg'}><button className="btn-link text-[#00d7c0]">Register</button></Link></div>
+                        <div className="text-sm mt-3">Are you new this side <Link to={'/reg'}><button className="btn-link text-[#00d7c0]">Register</button></Link></div>
                         <div className="mt-4 text-center">
                             <div onClick={handleCreateUserWithGoogle} className="flex items-center gap-3 justify-center w-full bg-accent hover:bg-accent/80 text-white py-2 rounded-md focus:outline-none transition duration-200">
                                 {gloading ?

@@ -28,6 +28,7 @@
 
 body {
   overflow-y: scroll;
+  background-color: var(--color-base)
 }
 
 .exo-2-font {
@@ -36,9 +37,10 @@ body {
 }
 
 :root {
-  --color-base: #fafafa;
+  --color-base: #efefef;
   --color-text: #1f2937;
   --color-button: #00cdb7;
+  scroll-behavior: smooth;
 }
 
 /* Dark Theme */

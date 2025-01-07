@@ -16,7 +16,7 @@ const MainLayout = () => {
     return (
         <div className="dark:text-white exo-2-font ">
             <ScrollRestoration />
-            <div className={`${isWFull ? '' : 'mxw'}  sticky top-0 z-50`}>
+            <div className={`${isWFull ? '' : 'mxw p-0'}  sticky top-0 z-50`}>
                 <Navbar></Navbar>
             </div>
             <div className="">

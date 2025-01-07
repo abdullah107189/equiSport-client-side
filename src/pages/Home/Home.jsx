@@ -3,11 +3,12 @@ import HomeProducts from "../../components/HomeProducts/HomeProducts";
 import faq from '../../assets/FAQq.gif'
 import community from '../../assets/community.gif'
 import Slider from "../../components/Slider/Slider";
+import Offers from "../../components/Offers/Offers";
 
 const Home = () => {
 
     return (
-        <div className="mxw">
+        <div className="mxw" >
             <Fade cascade damping={0.4}>
                 <Slider></Slider>
             </Fade>
@@ -15,6 +16,8 @@ const Home = () => {
 
             <HomeProducts></HomeProducts>
 
+            {/* faq section  */}
+            <h1 className="md:text-5xl text-2xl text-center md:pt-20 pt-5 font-bold" id="faq">FAQ Section</h1>
             <div className="md:flex justify-center gap-10 items-center minH md:py-10 py-5">
                 <div className="md:w-1/2">
                     <Slide direction="left" triggerOnce cascade damping={0.4}>
@@ -57,9 +60,12 @@ const Home = () => {
                 </div>
             </div>
 
+            <section>
+                <Offers></Offers>
+            </section>
 
-
-            <section className="md:flex items-center justify-center gap-10 minH md:my-10 my-5 rounded-r-full shadow-lg">
+            {/* contact section  */}
+            <section className="md:flex items-center justify-center gap-10 minH md:py-10 my-5 rounded-r-full shadow-lg" id="contact">
                 <div className="md:w-1/2 ">
                     <img className="w-full rounded-2xl" src={community} alt="" />
                 </div>

@@ -56,7 +56,7 @@ const AddEquipment = () => {
     };
 
     return (
-        <div className="max-w-4xl mx-auto md:p-6 md:my-10  shadow-lg rounded-lg">
+        <div className="max-w-4xl mx-auto md:p-6 md:my-10 dark:bg-gray-700/20 shadow-lg rounded-lg px-4">
             <h2 className="text-3xl font-semibold mb-4 text-center">Add Product</h2>
             <form onSubmit={handleSubmit}>
                 <div className="grid md:grid-cols-2 grid-cols-1 gap-2">
@@ -66,7 +66,7 @@ const AddEquipment = () => {
                             type="text"
                             id="image"
                             name="image"
-                            className="mt-2 block w-full p-2 border rounded-md shadow-sm"
+                            className="mt-2 block w-full p-2 border rounded-md shadow-sm dark:border-gray-500"
                             required
                         />
                     </div>
@@ -77,7 +77,7 @@ const AddEquipment = () => {
                             type="text"
                             id="itemName"
                             name="itemName"
-                            className="mt-2 block w-full p-2 border rounded-md shadow-sm"
+                            className="mt-2 block w-full p-2 border rounded-md shadow-sm dark:border-gray-500"
                             required
                         />
                     </div>
@@ -87,7 +87,7 @@ const AddEquipment = () => {
                             type="text"
                             id="category"
                             name="category"
-                            className="mt-2 block w-full p-2 border rounded-md shadow-sm"
+                            className="mt-2 block w-full p-2 border rounded-md shadow-sm dark:border-gray-500"
                             required
                         />
                     </div>
@@ -98,7 +98,7 @@ const AddEquipment = () => {
                             type="number"
                             id="price"
                             name="price"
-                            className="mt-2 block w-full p-2 border rounded-md shadow-sm"
+                            className="mt-2 block w-full p-2 border rounded-md shadow-sm dark:border-gray-500"
                             required
                         />
                     </div>
@@ -119,7 +119,7 @@ const AddEquipment = () => {
                             type="text"
                             id="customization"
                             name="customization"
-                            className="mt-2 block w-full p-2 border rounded-md shadow-sm"
+                            className="mt-2 block w-full p-2 border rounded-md shadow-sm dark:border-gray-500"
                         />
                     </div>
 
@@ -128,7 +128,7 @@ const AddEquipment = () => {
                         <div className="flex items-center gap-10 relative">
                             <DatePicker
                                 id="processingTime"
-                                className="mt-2 w-full p-2 border rounded-md shadow-sm"
+                                className="mt-2 w-full p-2 border rounded-md shadow-sm dark:border-gray-500"
                                 selected={startDate}
                                 onChange={(date) => setStartDate(date)}
                                 dateFormat="dd/MM//yyyy"
@@ -143,7 +143,7 @@ const AddEquipment = () => {
                             type="number"
                             id="stockStatus"
                             name="stockStatus"
-                            className="mt-2 block w-full p-2 border rounded-md shadow-sm"
+                            className="mt-2 block w-full p-2 border rounded-md shadow-sm dark:border-gray-500"
                             required
                         />
                     </div>
@@ -155,7 +155,7 @@ const AddEquipment = () => {
                             defaultValue={user?.email}
                             readOnly
                             name="authorEmail"
-                            className="mt-2 block w-full p-2 border rounded-md shadow-sm"
+                            className="mt-2 block w-full p-2 border rounded-md shadow-sm dark:border-gray-500"
                             required
                         />
                     </div>
@@ -167,7 +167,7 @@ const AddEquipment = () => {
                             defaultValue={user?.displayName}
                             readOnly
                             name="authorName"
-                            className="mt-2 block w-full p-2 border rounded-md shadow-sm"
+                            className="mt-2 block w-full p-2 border rounded-md shadow-sm dark:border-gray-500"
                             required
                         />
                     </div>
@@ -178,7 +178,7 @@ const AddEquipment = () => {
                     <textarea
                         id="description"
                         name="description"
-                        className="mt-2 block w-full p-2 border rounded-md shadow-sm"
+                        className="mt-2 block w-full p-2 border rounded-md shadow-sm dark:border-gray-500"
                         required
                     ></textarea>
                 </div>

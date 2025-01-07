@@ -9,19 +9,21 @@ const Footer = () => {
                     <img className='w-[150px] rounded-lg object-contain' src={logo} alt="" />
                     <p className="text-3xl font-bold italic"><span className="text-accent">E</span>qui<span className="text-accent">S</span>ports</p>
                 </aside>
+
                 <nav>
-                    <h6 className="footer-title">Services</h6>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
+                    <h3 className="footer-title font-semibold mb-2">Company</h3>
+                    <ul className="space-y-2">
+                        <li><a href="#home" className="hover:text-gray-200">About Us</a></li>
+                        <li><a href="#contact" className="hover:text-gray-200">Contact</a></li>
+                        <li><a href="#products" className="hover:text-gray-200">Products</a></li>
+                    </ul>
                 </nav>
                 <nav>
-                    <h6 className="footer-title">Company</h6>
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Jobs</a>
-                    <a className="link link-hover">Press kit</a>
+                    <h3 className="footer-title font-semibold mb-2">Help</h3>
+                    <ul className="space-y-2">
+                        <li><a href="#faq" className="hover:text-gray-200">FAQ</a></li>
+                        <li><a href="#offers" className="hover:text-gray-200">Offers</a></li>
+                    </ul>
                 </nav>
                 <nav>
                     <h6 className="footer-title">Social</h6>

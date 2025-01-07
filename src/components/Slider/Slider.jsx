@@ -32,7 +32,7 @@ const Slider = () => {
         },
     ];
     return (
-        <div className='mt-5 lg:mt-0'>
+        <div className='mt-5 lg:mt-0' id='home'>
             <>
                 <Swiper
                     slidesPerView={1}

@@ -12,7 +12,7 @@ export default {
         // Define colors using CSS variables
         base: "var(--color-base)",
         text: "var(--color-text)",
-        btn:  "var(--color-button)",
+        btn: "var(--color-button)",
       },
     },
   },
