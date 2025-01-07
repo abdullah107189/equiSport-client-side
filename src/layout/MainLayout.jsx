@@ -10,7 +10,7 @@ const MainLayout = () => {
     return (
         <div className="dark:text-white exo-2-font ">
             <ScrollRestoration />
-            <div className={`  sticky top-0 z-50`}>
+            <div className={` border-b shadow-sm sticky top-0 z-50`}>
                 <Navbar></Navbar>
             </div>
             <div className="">
