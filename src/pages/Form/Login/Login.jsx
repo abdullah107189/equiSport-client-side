@@ -91,7 +91,7 @@ const Login = () => {
                                     type="email"
                                     id="email"
                                     name="email"
-                                    className="mt-2 text-black block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                                    className="mt-2 text-black dark:text-white block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                                     required
                                 />
                             </div>
@@ -103,7 +103,7 @@ const Login = () => {
                                         id="password"
                                         type={open ? 'password' : 'text'}
                                         placeholder="password"
-                                        className="mt-2 text-black block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                                        className="mt-2 text-black dark:text-white block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                                         required />
                                     <span className="absolute top-2 right-1 cursor-pointer p-2" onClick={() => setOpen(!open)}>{open ? <FaEye className="w-10" /> : <FaEyeSlash className="w-10" />}</span>
                                 </div>
