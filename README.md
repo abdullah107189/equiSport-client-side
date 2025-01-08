@@ -20,6 +20,7 @@ EquiSports is a modern and dynamic Sports Equipment Store built with React and T
 - **Carousel:** Swiper.js
 - **Other Tools:** SweetAlert2, React Icons, React Tooltip, and Firebase for backend integration.
 
+<img src="https://i.ibb.co.com/D4V2ZrW/equi-sports-web-app-5.png"/>
 
 ## Installation
 
