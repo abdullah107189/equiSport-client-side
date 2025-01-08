@@ -20,6 +20,25 @@ EquiSports is a modern and dynamic Sports Equipment Store built with React and T
 - **Carousel:** Swiper.js
 - **Other Tools:** SweetAlert2, React Icons, React Tooltip, and Firebase for backend integration.
 
+
+## Installation
+
+To get started with the project, follow these steps:
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/abdullah107189/equiSport-client-side.git
+
+2. Navigate to the project directory:
+   ```bash
+   cd b10a7-select-cricketer-project-with-react
+   
+3. Install dependencies:
+   ```bash
+   npm install
+4. Start the development server:
+   ```bash
+   npm run dev
 ## Contribution
 
 Feel free to submit issues or pull requests to help improve EquiSports. Contributions are always welcome!
