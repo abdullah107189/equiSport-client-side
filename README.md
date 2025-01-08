@@ -31,8 +31,8 @@ To get started with the project, follow these steps:
 
 2. Navigate to the project directory:
    ```bash
-   cd b10a7-select-cricketer-project-with-react
-   
+   cd equiSport-client-side
+  
 3. Install dependencies:
    ```bash
    npm install
